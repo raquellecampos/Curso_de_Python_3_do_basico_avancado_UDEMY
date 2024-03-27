@@ -14,14 +14,23 @@ Se nada for digitado em nome ou idade:
     exiba "Desculpe, você deixou campos vazios."
 """
 
-nome = str(input('Digite seu nome: '))
-idade = int(input('Digeite sua idade: '))
 
-if nome != '':
+nome = str(input('Digite seu nome: '))
+idade = str(input('Digite sua idade: '))
+
+# uma string vazia tem o valor false quando confrontado com Boolean
+
+if nome or idade:
     print(f'Seu nome é {nome}')
     print(f'Seu nome invertido é {nome[::-1]}')
+    
+    if ' ' in nome:
+        print('Seu nome contém espaços')
+    else:
+        print('Seu nome não comtém espaços')
+
     print(f'Seu nome tem {len(nome)} letras')
     print(f'A primeira letra do seu nome é {nome[0]}')
     print(f'A ultima letra é {nome[-1]}')
-elif idade == '' or nome == '':
+else:
     print('Desculpe, você deixou campos vazios.')
